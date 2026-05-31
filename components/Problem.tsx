@@ -46,7 +46,7 @@ export default function Problem() {
           </AnimateOnScroll>
 
           <AnimateOnScroll direction="up" delay={80}>
-            <div className="rounded-2xl overflow-hidden flex items-center justify-center">
+            <div className="clay-card p-5 flex items-center justify-center">
               <Image src="/images/cleaning-service-rafiki-alt.svg" alt="Illustration showing informal vs professional cleaning" width={300} height={300} loading="lazy" className="w-full h-auto mix-blend-multiply" />
             </div>
           </AnimateOnScroll>

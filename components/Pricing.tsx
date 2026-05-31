@@ -1,4 +1,5 @@
 import { CheckCircle2 } from "lucide-react";
+import Image from "next/image";
 import AnimateOnScroll from "./AnimateOnScroll";
 
 const hostFeatures = [
@@ -25,11 +26,18 @@ export default function Pricing() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimateOnScroll className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-block text-sm font-semibold text-[#D97706] uppercase tracking-widest mb-4">Transparent Pricing</span>
-          <h2 id="pricing-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F172A] leading-tight tracking-tight mb-4">No hidden fees. Ever.</h2>
-          <p className="text-lg text-[#64748B] leading-relaxed">You always see exactly what you pay — and what your cleaner earns — before any money moves.</p>
-        </AnimateOnScroll>
+        <div className="flex flex-col lg:flex-row items-center gap-10 mb-16">
+          <AnimateOnScroll className="flex-1 text-center lg:text-left">
+            <span className="inline-block text-sm font-semibold text-[#D97706] uppercase tracking-widest mb-4">Transparent Pricing</span>
+            <h2 id="pricing-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F172A] leading-tight tracking-tight mb-4">No hidden fees. Ever.</h2>
+            <p className="text-lg text-[#64748B] leading-relaxed">You always see exactly what you pay — and what your cleaner earns — before any money moves.</p>
+          </AnimateOnScroll>
+          <AnimateOnScroll direction="right" className="flex-shrink-0 w-full max-w-xs">
+            <div className="clay-card-cream p-5">
+              <Image src="/images/gutter-cleaning-bro.svg" alt="Professional cleaning service illustration" width={280} height={220} loading="lazy" className="w-full h-auto rounded-xl mix-blend-multiply" />
+            </div>
+          </AnimateOnScroll>
+        </div>
 
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
           {/* Host */}
