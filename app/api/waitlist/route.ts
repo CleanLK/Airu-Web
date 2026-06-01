@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { promises as fs } from "fs";
-import path from "path";
+import { createClient } from "@supabase/supabase-js";
 
 export const runtime = "nodejs";
 
@@ -22,6 +21,17 @@ function bad(errors: Record<string, string>) {
   return NextResponse.json({ ok: false, errors }, { status: 400 });
 }
 
+/* ── Supabase client (server-only, uses service_role) ───────── */
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+const supabase =
+  supabaseUrl && supabaseKey
+    ? createClient(supabaseUrl, supabaseKey, {
+        auth: { persistSession: false, autoRefreshToken: false },
+      })
+    : null;
+
 export async function POST(req: NextRequest) {
   let body: Json;
   try {
@@ -42,7 +52,7 @@ export async function POST(req: NextRequest) {
 
   const errors: Record<string, string> = {};
   const name = str(body.name);
-  const email = str(body.email);
+  const email = str(body.email).toLowerCase();
   const phone = str(body.phone).replace(/\s+/g, "");
 
   if (name.length < 2) errors.name = "Please enter your full name.";
@@ -50,13 +60,12 @@ export async function POST(req: NextRequest) {
   if (!PHONE_RE.test(phone)) errors.phone = "Enter a valid Sri Lankan mobile (e.g. 077 123 4567).";
   if (body.consent !== true) errors.consent = "Please accept to continue.";
 
-  const record: Json = {
+  const row: Record<string, unknown> = {
     role,
     name,
     email,
     phone,
-    city: str(body.city),
-    submittedAt: new Date().toISOString(),
+    city: str(body.city) || null,
   };
 
   if (role === "host") {
@@ -64,30 +73,41 @@ export async function POST(req: NextRequest) {
     if (!PROPERTY_TYPES.includes(propertyType as (typeof PROPERTY_TYPES)[number])) {
       errors.propertyType = "Select your property type.";
     }
-    record.propertyType = propertyType;
-    record.portfolio = str(body.portfolio);      // # of properties bucket
-    record.size = str(body.size);                // rooms / bedrooms bucket
-    record.hostType = str(body.hostType);        // individual / management co.
+    row.property_type = propertyType;
+    row.portfolio = str(body.portfolio) || null;
+    row.size = str(body.size) || null;
+    row.host_type = str(body.hostType) || null;
   } else {
-    record.experience = str(body.experience);
+    row.experience = str(body.experience) || null;
     const langs = Array.isArray(body.languages)
       ? body.languages.filter((l): l is string => typeof l === "string").slice(0, 5)
       : [];
-    record.languages = langs;
-    record.transport = body.transport === true;
-    record.nic = str(body.nic, 20);
+    row.languages = langs;
+    row.transport = body.transport === true;
+    row.nic = str(body.nic, 20) || null;
   }
 
   if (Object.keys(errors).length > 0) return bad(errors);
 
-  // Best-effort persistence — never fail the request on storage errors.
-  try {
-    const file =
-      process.env.WAITLIST_FILE ?? path.join(process.cwd(), ".data", "waitlist.jsonl");
-    await fs.mkdir(path.dirname(file), { recursive: true });
-    await fs.appendFile(file, JSON.stringify(record) + "\n", "utf8");
-  } catch (err) {
-    console.error("[waitlist] file persistence failed:", err);
+  if (!supabase) {
+    console.error("[waitlist] Supabase env vars missing — set SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY");
+    return NextResponse.json(
+      { ok: false, errors: { _form: "Server not configured. Please try again later." } },
+      { status: 500 }
+    );
+  }
+
+  const { error } = await supabase.from("waitlist").insert(row);
+
+  if (error) {
+    if (error.code === "23505") {
+      return bad({ email: "This email is already on the waitlist." });
+    }
+    console.error("[waitlist] insert failed:", error);
+    return NextResponse.json(
+      { ok: false, errors: { _form: "Could not save your signup. Please try again." } },
+      { status: 500 }
+    );
   }
 
   // Optional: forward to a webhook (Slack, Google Sheets, Zapier, etc.)
@@ -97,13 +117,13 @@ export async function POST(req: NextRequest) {
       await fetch(webhook, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(record),
+        body: JSON.stringify({ ...row, submitted_at: new Date().toISOString() }),
       });
     } catch (err) {
       console.error("[waitlist] webhook forward failed:", err);
     }
   }
 
-  console.log(`[waitlist] new ${role} signup:`, record.email);
+  console.log(`[waitlist] new ${role} signup:`, email);
   return NextResponse.json({ ok: true });
 }
