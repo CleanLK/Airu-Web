@@ -27,7 +27,7 @@ function getClientIp(req: NextRequest): string {
   );
 }
 
-export function middleware(req: NextRequest): NextResponse {
+export function proxy(req: NextRequest): NextResponse {
   const now = Date.now();
   const ip = getClientIp(req);
 
