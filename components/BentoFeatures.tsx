@@ -44,16 +44,16 @@ export default function BentoFeatures() {
               </svg>
 
               <div className="relative z-10">
-                <div className="w-11 h-11 rounded-2xl bg-[#A3B087]/20 border border-[#A3B087]/35 flex items-center justify-center mb-4">
+                <div className="glass-pill w-11 h-11 rounded-2xl flex items-center justify-center mb-4">
                   <MapPin size={22} color="#C4D0A8" strokeWidth={2} aria-hidden="true" />
                 </div>
                 <h3 className="text-xl lg:text-2xl font-bold text-white leading-snug mb-2">Real-time cleaner tracking</h3>
                 <p className="text-sm text-white/55 leading-relaxed max-w-xs">Watch your cleaner travel to your property live on a map. GPS-stamped check-in and check-out on every job.</p>
               </div>
 
-              <div className="relative z-10 flex items-center gap-2 bg-white/8 backdrop-blur-sm border border-white/12 rounded-full px-3.5 py-2 w-fit">
-                <span className="w-2 h-2 rounded-full bg-[#A3B087] flex-shrink-0" aria-hidden="true" />
-                <span className="text-xs font-semibold text-white/75">Kasun is 4 mins away</span>
+              <div className="glass-pill relative z-10 flex items-center gap-2 rounded-full px-3.5 py-2 w-fit">
+                <span className="w-2 h-2 rounded-full bg-[#A3B087] flex-shrink-0 animate-pulse" aria-hidden="true" />
+                <span className="text-xs font-semibold text-white/80">Kasun is 4 mins away</span>
               </div>
             </div>
           </AnimateOnScroll>

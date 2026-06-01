@@ -25,8 +25,10 @@ export default function Navbar() {
     <div className="fixed top-0 left-0 right-0 z-50 flex justify-center px-4 sm:px-6 pt-4">
       <header
         role="banner"
-        className={`w-full max-w-6xl bg-white/90 backdrop-blur-md rounded-2xl border border-[#E2E8F0] transition-all duration-200 ${
-          scrolled ? "shadow-lg" : "shadow-[0_2px_16px_rgba(0,0,0,0.07)]"
+        className={`w-full max-w-6xl bg-white/70 backdrop-blur-xl backdrop-saturate-150 rounded-2xl border border-white/60 ring-1 ring-inset ring-white/40 transition-all duration-200 ${
+          scrolled
+            ? "shadow-[0_12px_40px_rgba(49,54,71,0.16),inset_0_1px_0_rgba(255,255,255,0.9)]"
+            : "shadow-[0_2px_16px_rgba(49,54,71,0.08),inset_0_1px_0_rgba(255,255,255,0.9)]"
         }`}
       >
         {/* 3-column grid: logo | nav | ctas */}

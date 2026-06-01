@@ -25,9 +25,9 @@ export default function Hero() {
           {/* Left */}
           <div className="flex flex-col gap-8">
             {/* Pill */}
-            <div className="inline-flex items-center gap-2.5 rounded-full px-4 py-2 w-fit border border-white/15 bg-white/8 backdrop-blur-sm">
+            <div className="glass-pill inline-flex items-center gap-2.5 rounded-full px-4 py-2 w-fit">
               <span className="w-2 h-2 rounded-full bg-[#22C55E] shadow-[0_0_8px_#22C55E]" aria-hidden="true" />
-              <span className="text-xs font-semibold text-white/70 uppercase tracking-widest">Now live in Colombo</span>
+              <span className="text-xs font-semibold text-white/75 uppercase tracking-widest">Now live in Colombo</span>
             </div>
 
             <div className="flex flex-col gap-5">
@@ -58,9 +58,9 @@ export default function Hero() {
                 { icon: ShieldCheck, label: "Police Cleared", color: "#60A5FA" },
                 { icon: Star,        label: "5-Star Rated",   color: "#FBBF24" },
               ].map(({ icon: Icon, label, color }) => (
-                <div key={label} role="listitem" className="flex items-center gap-2 rounded-full px-4 py-2.5 min-h-[44px] border border-white/15 bg-white/8 backdrop-blur-sm">
+                <div key={label} role="listitem" className="glass-pill flex items-center gap-2 rounded-full px-4 py-2.5 min-h-[44px]">
                   <Icon size={15} style={{ color }} strokeWidth={2.5} aria-hidden="true" />
-                  <span className="text-sm font-medium text-white/75">{label}</span>
+                  <span className="text-sm font-medium text-white/80">{label}</span>
                 </div>
               ))}
             </div>
