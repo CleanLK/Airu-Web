@@ -30,10 +30,10 @@ export default function CTA() {
                   Join Airbnb hosts in Colombo who have switched to a verified, professional cleaning service they can actually rely on.
                 </p>
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3">
-                  <a href="#book" className="inline-flex items-center justify-center gap-2.5 min-h-[54px] text-white font-semibold text-[15px] px-10 rounded-2xl btn-primary cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22C55E] focus-visible:ring-offset-2 focus-visible:ring-offset-[#313647]">
-                    Book Your First Clean <ArrowRight size={16} aria-hidden="true" />
+                  <a href="#join-host" className="inline-flex items-center justify-center gap-2.5 min-h-[54px] text-white font-semibold text-[15px] px-10 rounded-2xl btn-primary cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22C55E] focus-visible:ring-offset-2 focus-visible:ring-offset-[#313647]">
+                    Join as a Host <ArrowRight size={16} aria-hidden="true" />
                   </a>
-                  <a href="#for-cleaners" className="inline-flex items-center justify-center min-h-[54px] text-white/75 hover:text-white font-semibold text-[15px] px-10 rounded-2xl border border-white/20 hover:border-white/35 hover:bg-white/8 transition-all duration-200 cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#313647]">
+                  <a href="#join-cleaner" className="inline-flex items-center justify-center min-h-[54px] text-white/75 hover:text-white font-semibold text-[15px] px-10 rounded-2xl border border-white/20 hover:border-white/35 hover:bg-white/8 transition-all duration-200 cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#313647]">
                     Join as a Cleaner
                   </a>
                 </div>

@@ -5,12 +5,12 @@ const cols = {
     { label:"Pricing",        href:"#pricing" },
   ],
   Hosts: [
-    { label:"Book a Cleaner",      href:"#book" },
+    { label:"Join as a Host",      href:"#join-host" },
     { label:"Property Dashboard",  href:"#" },
     { label:"Cancellation Policy", href:"#" },
   ],
   Cleaners: [
-    { label:"Apply to Join",    href:"#join" },
+    { label:"Apply to Join",    href:"#join-cleaner" },
     { label:"How Payouts Work", href:"#" },
     { label:"Vetting Process",  href:"#trust" },
   ],

@@ -10,6 +10,7 @@ import ForCleaners from "@/components/ForCleaners";
 import Pricing from "@/components/Pricing";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import WaitlistModal from "@/components/waitlist/WaitlistModal";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
         <CTA />
       </main>
       <Footer />
+      <WaitlistModal />
     </>
   );
 }

@@ -43,11 +43,11 @@ export default function Hero() {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-3">
-              <a href="#book" className="inline-flex items-center justify-center gap-2.5 min-h-[52px] text-white font-semibold text-[15px] px-9 rounded-2xl btn-primary cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22C55E] focus-visible:ring-offset-2 focus-visible:ring-offset-[#313647]">
-                Book a Cleaner <ArrowRight size={16} aria-hidden="true" />
+              <a href="#join-host" className="inline-flex items-center justify-center gap-2.5 min-h-[52px] text-white font-semibold text-[15px] px-9 rounded-2xl btn-primary cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22C55E] focus-visible:ring-offset-2 focus-visible:ring-offset-[#313647]">
+                Join as a Host <ArrowRight size={16} aria-hidden="true" />
               </a>
-              <a href="#for-cleaners" className="inline-flex items-center justify-center min-h-[52px] text-white/80 hover:text-white font-semibold text-[15px] px-9 rounded-2xl border border-white/20 hover:border-white/35 hover:bg-white/8 transition-all duration-200 cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22C55E] focus-visible:ring-offset-2 focus-visible:ring-offset-[#313647]">
-                Join as Cleaner
+              <a href="#join-cleaner" className="inline-flex items-center justify-center min-h-[52px] text-white/80 hover:text-white font-semibold text-[15px] px-9 rounded-2xl border border-white/20 hover:border-white/35 hover:bg-white/8 transition-all duration-200 cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#22C55E] focus-visible:ring-offset-2 focus-visible:ring-offset-[#313647]">
+                Join as a Cleaner
               </a>
             </div>
 

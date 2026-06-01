@@ -65,13 +65,13 @@ export default function Navbar() {
           {/* CTAs — right */}
           <div className="hidden lg:flex items-center justify-end gap-1.5">
             <a
-              href="#for-cleaners"
+              href="#join-cleaner"
               className="text-[13.5px] font-medium text-[#374151] hover:text-[#0F172A] px-3.5 py-1.5 rounded-lg hover:bg-[#F1F5F9] transition-all duration-150 cursor-pointer whitespace-nowrap"
             >
               Join as Cleaner
             </a>
             <a
-              href="#book"
+              href="#join-host"
               className="inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-white bg-[#313647] hover:bg-[#3D4258] px-4 py-1.5 rounded-lg transition-colors duration-150 cursor-pointer whitespace-nowrap shadow-sm"
             >
               I&apos;m a Host <span aria-hidden="true">→</span>
@@ -112,14 +112,14 @@ export default function Navbar() {
             ))}
             <div className="flex flex-col gap-2 pt-3 mt-1 border-t border-[#F1F5F9]">
               <a
-                href="#for-cleaners"
+                href="#join-cleaner"
                 onClick={() => setOpen(false)}
                 className="min-h-10.5 inline-flex items-center justify-center text-[14px] font-medium text-[#374151] border border-[#E2E8F0] rounded-lg px-4 cursor-pointer hover:bg-[#F8FAFC] transition-colors duration-150"
               >
                 Join as Cleaner
               </a>
               <a
-                href="#book"
+                href="#join-host"
                 onClick={() => setOpen(false)}
                 className="min-h-10.5 inline-flex items-center justify-center gap-1.5 text-[14px] font-semibold text-white bg-[#313647] hover:bg-[#3D4258] rounded-lg px-4 cursor-pointer transition-colors duration-150 shadow-sm"
               >

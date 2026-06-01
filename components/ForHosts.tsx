@@ -76,8 +76,8 @@ export default function ForHosts() {
               ))}
             </ul>
 
-            <a href="#book" id="book" className="inline-flex items-center justify-center gap-2.5 min-h-[52px] text-white font-semibold text-[15px] px-9 rounded-2xl btn-primary cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16A34A] focus-visible:ring-offset-2 w-fit">
-              Book Your First Clean <ArrowRight size={16} aria-hidden="true" />
+            <a href="#join-host" id="book" className="inline-flex items-center justify-center gap-2.5 min-h-[52px] text-white font-semibold text-[15px] px-9 rounded-2xl btn-primary cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16A34A] focus-visible:ring-offset-2 w-fit">
+              Join as a Host <ArrowRight size={16} aria-hidden="true" />
             </a>
           </AnimateOnScroll>
         </div>
