@@ -52,7 +52,7 @@ export default function ForCleaners() {
               ))}
             </ul>
 
-            <a href="#join" id="join" className="inline-flex items-center justify-center gap-2.5 min-h-[52px] text-white font-semibold text-[15px] px-9 rounded-2xl btn-primary cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16A34A] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F2F4ED] w-fit">
+            <a href="#join-cleaner" id="join" className="inline-flex items-center justify-center gap-2.5 min-h-[52px] text-white font-semibold text-[15px] px-9 rounded-2xl btn-primary cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16A34A] focus-visible:ring-offset-2 focus-visible:ring-offset-[#F2F4ED] w-fit">
               Apply to Join Airu <ArrowRight size={16} aria-hidden="true" />
             </a>
           </AnimateOnScroll>

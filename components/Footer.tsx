@@ -5,12 +5,12 @@ const cols = {
     { label:"Pricing",        href:"#pricing" },
   ],
   Hosts: [
-    { label:"Book a Cleaner",      href:"#book" },
+    { label:"Join as a Host",      href:"#join-host" },
     { label:"Property Dashboard",  href:"#" },
     { label:"Cancellation Policy", href:"#" },
   ],
   Cleaners: [
-    { label:"Apply to Join",    href:"#join" },
+    { label:"Apply to Join",    href:"#join-cleaner" },
     { label:"How Payouts Work", href:"#" },
     { label:"Vetting Process",  href:"#trust" },
   ],
@@ -42,7 +42,10 @@ export default function Footer() {
               <span className="text-xl font-bold text-white tracking-tight">Airu</span>
             </a>
             <p className="text-sm text-white/45 leading-relaxed mb-4">Sri Lanka&apos;s trusted on-demand cleaning marketplace for Airbnb hosts and short-term rental managers.</p>
-            <p className="text-xs text-white/25 font-medium">Colombo, Sri Lanka · Launching 2025</p>
+            <span className="glass-pill inline-flex items-center gap-2 rounded-full px-3.5 py-2 text-xs font-medium text-white/55">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#A3B087]" aria-hidden="true" />
+              Colombo, Sri Lanka · Launching 2025
+            </span>
           </div>
 
           {Object.entries(cols).map(([section, items]) => (
