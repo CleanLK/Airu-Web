@@ -4,30 +4,25 @@ import AnimateOnScroll from "./AnimateOnScroll";
 
 const stages = [
   { n:"01", icon:ClipboardCheck, title:"Application & Auto-Screening",  tag:"Automated",    tagColor:"#16A34A",  tagBg:"#DCFCE7",  desc:"NIC format validation, age check (18+), OTP-verified mobile, duplicate detection. Automated — zero staff time for rejected applicants." },
-  { n:"02", icon:ScanFace,       title:"Identity Verification",         tag:"Face-match AI", tagColor:"#2563EB",  tagBg:"#DBEAFE",  desc:"NIC scan (both sides) + live selfie matched using facial recognition (iDenfy). Three-tier routing: auto-pass, manual review, or reject." },
-  { n:"03", icon:ShieldCheck,    title:"Background Check",              tag:"Police Cleared",tagColor:"#D97706",  tagBg:"#FEF3C7",  desc:"Police Clearance Certificate from Sri Lanka Police — self-obtained, staff-verified. Two personal references contacted by phone." },
-  { n:"04", icon:BookOpen,       title:"Orientation & Assessment",      tag:"Certified",     tagColor:"#7C3AED",  tagBg:"#EDE9FE",  desc:"Three self-paced training modules: Platform Rules, Cleaning Standards, Legal & Privacy. Mandatory 20-question quiz — 75% pass mark." },
-  { n:"05", icon:FileSignature,  title:"Agreement & Activation",        tag:"Legally Bound", tagColor:"#0891B2",  tagBg:"#CCFBF1",  desc:"Digital signing of Contractor Agreement, Conduct Policy, and PDPA Consent. Bank verified. Profile activated with Probationary badge." },
+  { n:"02", icon:ScanFace,       title:"Identity Verification",         tag:"Face-match AI", tagColor:"#16A34A",  tagBg:"#DCFCE7",  desc:"NIC scan (both sides) + live selfie matched using facial recognition (iDenfy). Three-tier routing: auto-pass, manual review, or reject." },
+  { n:"03", icon:ShieldCheck,    title:"Background Check",              tag:"Police Cleared",tagColor:"#16A34A",  tagBg:"#DCFCE7",  desc:"Police Clearance Certificate from Sri Lanka Police — self-obtained, staff-verified. Two personal references contacted by phone." },
+  { n:"04", icon:BookOpen,       title:"Orientation & Assessment",      tag:"Certified",     tagColor:"#16A34A",  tagBg:"#DCFCE7",  desc:"Three self-paced training modules: Platform Rules, Cleaning Standards, Legal & Privacy. Mandatory 20-question quiz — 75% pass mark." },
+  { n:"05", icon:FileSignature,  title:"Agreement & Activation",        tag:"Legally Bound", tagColor:"#16A34A",  tagBg:"#DCFCE7",  desc:"Digital signing of Contractor Agreement, Conduct Policy, and PDPA Consent. Bank verified. Profile activated with Probationary badge." },
 ];
 
 const stats = [
   { value:"48hr",  label:"Average vetting time", color:"#16A34A" },
-  { value:"7",     label:"Checks per cleaner",   color:"#2563EB" },
-  { value:"3",     label:"Trust tiers",          color:"#7C3AED" },
-  { value:"100%",  label:"Digitally signed",     color:"#D97706" },
+  { value:"7",     label:"Checks per cleaner",   color:"#16A34A" },
+  { value:"3",     label:"Trust tiers",          color:"#16A34A" },
+  { value:"100%",  label:"Digitally signed",     color:"#16A34A" },
 ];
 
 export default function TrustVetting() {
   return (
-    <section id="trust" aria-labelledby="trust-heading" className="py-20 lg:py-28 bg-white relative overflow-hidden">
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#E4E8D9]/60 blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-[#FFF8D4]/70 blur-3xl" />
-      </div>
-
+    <section id="trust" aria-labelledby="trust-heading" className="py-20 lg:py-28 bg-white">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll className="text-center max-w-2xl mx-auto mb-14">
-          <span className="inline-block text-sm font-semibold text-[#7C3AED] uppercase tracking-widest mb-4">Trust & Safety</span>
+          <span className="inline-block text-sm font-semibold text-[#16A34A] uppercase tracking-widest mb-4">Trust & Safety</span>
           <h2 id="trust-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0F172A] leading-tight tracking-tight mb-4">
             Every cleaner is vetted.{" "}
             <span className="text-[#16A34A]">No exceptions.</span>
@@ -53,7 +48,7 @@ export default function TrustVetting() {
           {/* Timeline */}
           <div className="lg:col-span-3" role="list" aria-label="5-stage vetting process">
             <div className="relative flex flex-col gap-4">
-              <div aria-hidden="true" className="absolute left-5 top-5 bottom-5 w-px bg-gradient-to-b from-[#16A34A] via-[#7C3AED]/40 to-transparent hidden sm:block" />
+              <div aria-hidden="true" className="absolute left-5 top-5 bottom-5 w-px bg-gradient-to-b from-[#16A34A] via-[#16A34A]/40 to-transparent hidden sm:block" />
               {stages.map(({ n, icon: Icon, title, desc, tag, tagColor, tagBg }, i) => (
                 <AnimateOnScroll key={n} direction="left" delay={i * 70}>
                   <article role="listitem" className="relative flex gap-5 sm:gap-7">
@@ -81,7 +76,7 @@ export default function TrustVetting() {
 
           {/* Right illustration */}
           <AnimateOnScroll direction="right" className="lg:col-span-2 lg:sticky lg:top-28">
-            <div className="clay-card-purple p-5 flex flex-col gap-4">
+            <div className="clay-card-sage p-5 flex flex-col gap-4">
               <Image src="/images/cleaning-service-pana-alt.svg" alt="Illustration of a vetted and certified cleaning professional" width={340} height={320} loading="lazy" className="w-full h-auto rounded-2xl mix-blend-multiply" />
               <div className="clay-card p-4 text-center">
                 <p className="text-sm text-[#64748B]">No other platform in Sri Lanka operates this level of cleaner verification.</p>

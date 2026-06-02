@@ -110,12 +110,12 @@ export default function WaitlistModal() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[360px] h-[360px] rounded-full bg-[#FFF8D4]/10 blur-[140px]" />
       </div>
 
-      {/* Frosted glass layer — blurs the colored blobs behind it (the glassmorphism) + dismiss */}
+      {/* Scrim dismiss */}
       <button
         type="button"
         aria-label="Close waitlist"
         onClick={close}
-        className="fixed inset-0 backdrop-blur-xl backdrop-saturate-150 bg-[#1B1E29]/20 cursor-default"
+        className="fixed inset-0 cursor-default"
         tabIndex={-1}
       />
 
@@ -123,8 +123,6 @@ export default function WaitlistModal() {
       <div className="animate-panel-in relative z-10 w-full max-w-xl my-auto">
         {/* Glass glow halo behind the card */}
         <div aria-hidden="true" className="pointer-events-none absolute -inset-3 sm:-inset-4 rounded-[40px] bg-gradient-to-br from-[#22C55E]/30 via-[#A3B087]/18 to-[#313647]/25 blur-2xl" />
-        {/* Frosted glass frame just outside the card edge */}
-        <div aria-hidden="true" className="glass-lg pointer-events-none absolute -inset-1.5 rounded-[34px]" />
 
       <div
         ref={panelRef}
@@ -188,7 +186,7 @@ export default function WaitlistModal() {
 
             {/* Heading */}
             <div className="flex items-start gap-3 mb-6 pr-8">
-              <div className={`w-11 h-11 rounded-2xl flex items-center justify-center flex-shrink-0 ${isHost ? "bg-gradient-to-br from-[#22C55E] to-[#15803D]" : "bg-gradient-to-br from-[#435663] to-[#313647]"}`}>
+              <div className={`w-11 h-11 rounded-2xl flex items-center justify-center flex-shrink-0 ${isHost ? "bg-[#16A34A]" : "bg-[#313647]"}`}>
                 {isHost
                   ? <ShieldCheck size={20} color="white" strokeWidth={2} aria-hidden="true" />
                   : <Sparkles size={20} color="white" strokeWidth={2} aria-hidden="true" />}
@@ -211,7 +209,7 @@ export default function WaitlistModal() {
               : <CleanerWaitlistForm onSuccess={() => setDone(true)} />}
 
             <p className="text-[11px] text-[#94A3B8] mt-5 text-center">
-              🔒 Your details are kept private and used only to contact you about Airu&apos;s launch.
+              Your details are kept private and used only to contact you about Airu&apos;s launch.
             </p>
           </>
         )}

@@ -12,7 +12,6 @@ export default function BentoFeatures() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll className="text-center max-w-2xl mx-auto mb-14">
-          <span className="inline-block text-sm font-semibold text-[#A3B087] uppercase tracking-widest mb-4">Platform Features</span>
           <h2 id="features-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight mb-4">
             Everything you need. Nothing you don&apos;t.
           </h2>
@@ -44,14 +43,14 @@ export default function BentoFeatures() {
               </svg>
 
               <div className="relative z-10">
-                <div className="glass-pill w-11 h-11 rounded-2xl flex items-center justify-center mb-4">
+                <div className="clay-pill-dark w-11 h-11 rounded-2xl flex items-center justify-center mb-4">
                   <MapPin size={22} color="#C4D0A8" strokeWidth={2} aria-hidden="true" />
                 </div>
                 <h3 className="text-xl lg:text-2xl font-bold text-white leading-snug mb-2">Real-time cleaner tracking</h3>
                 <p className="text-sm text-white/55 leading-relaxed max-w-xs">Watch your cleaner travel to your property live on a map. GPS-stamped check-in and check-out on every job.</p>
               </div>
 
-              <div className="glass-pill relative z-10 flex items-center gap-2 rounded-full px-3.5 py-2 w-fit">
+              <div className="clay-pill-dark relative z-10 flex items-center gap-2 rounded-full px-3.5 py-2 w-fit">
                 <span className="w-2 h-2 rounded-full bg-[#A3B087] flex-shrink-0 animate-pulse" aria-hidden="true" />
                 <span className="text-xs font-semibold text-white/80">Kasun is 4 mins away</span>
               </div>
@@ -114,7 +113,7 @@ export default function BentoFeatures() {
           <AnimateOnScroll direction="left" delay={60} className="col-span-2 row-span-1">
             <div className="clay-card h-full p-6 flex items-center gap-5 overflow-hidden relative">
               <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-[#F0FDF4] via-white to-white opacity-90 pointer-events-none" />
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#22C55E] to-[#15803D] flex items-center justify-center shadow-md shadow-green-300/30 flex-shrink-0 relative z-10">
+              <div className="w-12 h-12 rounded-2xl bg-[#16A34A] flex items-center justify-center flex-shrink-0 relative z-10">
                 <BadgeCheck size={22} color="white" strokeWidth={2} aria-hidden="true" />
               </div>
               <div className="relative z-10 min-w-0">

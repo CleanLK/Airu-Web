@@ -14,16 +14,10 @@ const steps = [
 export default function HowItWorks() {
   return (
     <section id="how-it-works" aria-labelledby="hiw-heading" className="py-20 lg:py-28 bg-[#F2F4ED] relative overflow-hidden">
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-white/55 blur-[80px]" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full bg-[#E4E8D9]/70 blur-[60px]" />
-      </div>
-
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header + illustration */}
         <div className="flex flex-col lg:flex-row items-center gap-10 mb-16">
           <AnimateOnScroll className="flex-1 text-center lg:text-left">
-            <span className="inline-block text-sm font-semibold text-[#7A8763] uppercase tracking-widest mb-4">How It Works</span>
             <h2 id="hiw-heading" className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#313647] leading-tight tracking-tight mb-4">
               Six steps. Spotless property.
             </h2>
@@ -45,7 +39,7 @@ export default function HowItWorks() {
               <article className="clay-card p-6 lg:p-7 h-full group">
                 <div className="flex items-center justify-between mb-5">
                   <span className="text-5xl font-bold text-[#E4E8D9] select-none tabular-nums group-hover:text-[#C4D0A8] transition-colors duration-200" aria-hidden="true">{n}</span>
-                  <div className="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#435663] to-[#313647] flex items-center justify-center shadow-md shadow-[#313647]/25 flex-shrink-0">
+                  <div className="w-11 h-11 rounded-2xl bg-[#313647] flex items-center justify-center flex-shrink-0">
                     <Icon size={20} color="white" strokeWidth={2} aria-hidden="true" />
                   </div>
                 </div>

@@ -55,7 +55,7 @@ export default function Navbar() {
             className="flex items-center gap-2 cursor-pointer flex-shrink-0 w-fit focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#16A34A] rounded-lg"
             aria-label="Airu — home"
           >
-            <div className="clay-logo w-7 h-7 rounded-xl bg-gradient-to-br from-[#2ED173] to-[#15803D] flex items-center justify-center flex-shrink-0">
+            <div className="clay-logo w-7 h-7 rounded-xl bg-[#16A34A] flex items-center justify-center flex-shrink-0">
               <svg width="14" height="14" viewBox="0 0 18 18" fill="none" aria-hidden="true">
                 <path d="M9 2C9 2 4 5.5 4 10C4 12.76 6.24 15 9 15C11.76 15 14 12.76 14 10C14 5.5 9 2 9 2Z" fill="white" opacity="0.9"/>
                 <path d="M9 6C9 6 6.5 8 6.5 10.5C6.5 11.88 7.62 13 9 13C10.38 13 11.5 11.88 11.5 10.5C11.5 8 9 6 9 6Z" fill="white"/>

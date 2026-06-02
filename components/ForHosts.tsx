@@ -4,19 +4,14 @@ import AnimateOnScroll from "./AnimateOnScroll";
 
 const benefits = [
   { icon:ShieldCheck, title:"Only vetted cleaners",    desc:"NIC-verified, police-cleared, reference-checked, and trained. Every cleaner shows their trust badge before you book.", color:"#16A34A", bg:"#DCFCE7" },
-  { icon:Clock,       title:"Book in under 3 minutes", desc:"Property, time slot, cleaner — done. Payment captured securely at confirmation via PayHere.", color:"#2563EB", bg:"#DBEAFE" },
-  { icon:MapPin,      title:"Real-time tracking",      desc:"Live map tracking. GPS-stamped check-in and check-out — full digital audit trail on every job.", color:"#0891B2", bg:"#CCFBF1" },
+  { icon:Clock,       title:"Book in under 3 minutes", desc:"Property, time slot, cleaner — done. Payment captured securely at confirmation via PayHere.", color:"#D97706", bg:"#FEF3C7" },
+  { icon:MapPin,      title:"Real-time tracking",      desc:"Live map tracking. GPS-stamped check-in and check-out — full digital audit trail on every job.", color:"#16A34A", bg:"#DCFCE7" },
   { icon:Camera,      title:"Before & after photos",   desc:"Mandatory photo uploads at job start and completion. Stored 90 days. Your primary evidence for any dispute.", color:"#D97706", bg:"#FEF3C7" },
 ];
 
 export default function ForHosts() {
   return (
     <section id="for-hosts" aria-labelledby="hosts-heading" className="py-20 lg:py-28 bg-[#FFF8D4] relative overflow-hidden">
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-[#F2F4ED]/70 blur-3xl opacity-80" />
-        <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-white/60 blur-3xl opacity-70" />
-      </div>
-
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
@@ -33,7 +28,7 @@ export default function ForHosts() {
                   <span className="text-xs bg-[#16A34A] text-white font-semibold px-2.5 py-1 rounded-full">✓ Paid</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#22C55E] to-[#15803D] flex items-center justify-center text-white font-bold text-sm flex-shrink-0">K</div>
+                  <div className="w-10 h-10 rounded-full bg-[#16A34A] flex items-center justify-center text-white font-bold text-sm flex-shrink-0">K</div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-semibold text-[#0F172A] truncate">Kasun Perera</p>
                     <div className="flex items-center gap-1">

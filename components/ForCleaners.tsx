@@ -4,25 +4,20 @@ import AnimateOnScroll from "./AnimateOnScroll";
 
 const benefits = [
   { icon:Banknote,     title:"Reliable digital income",   desc:"Paid per completed job directly to your bank within 2 business days. No cash, no chasing.", color:"#16A34A", bg:"#DCFCE7" },
-  { icon:CalendarDays, title:"You control your schedule", desc:"Accept or decline jobs freely. Set your own availability. No exclusivity — work with multiple platforms.", color:"#2563EB", bg:"#DBEAFE" },
-  { icon:TrendingUp,   title:"Grow your reputation",      desc:"Every job builds your rating. Top Rated cleaners get priority matching, premium properties, and higher-value jobs.", color:"#7C3AED", bg:"#EDE9FE" },
+  { icon:CalendarDays, title:"You control your schedule", desc:"Accept or decline jobs freely. Set your own availability. No exclusivity — work with multiple platforms.", color:"#D97706", bg:"#FEF3C7" },
+  { icon:TrendingUp,   title:"Grow your reputation",      desc:"Every job builds your rating. Top Rated cleaners get priority matching, premium properties, and higher-value jobs.", color:"#16A34A", bg:"#DCFCE7" },
   { icon:BadgeCheck,   title:"A professional profile",    desc:"Your verified badge, rating, and job count are visible to hosts. Your work history becomes a portable credential.", color:"#D97706", bg:"#FEF3C7" },
 ];
 
 const earnings = [
   { jobs:"5 jobs/wk",  gross:"LKR 15,000", net:"~LKR 11,400", pct:33, color:"#16A34A" },
-  { jobs:"10 jobs/wk", gross:"LKR 30,000", net:"~LKR 22,800", pct:66, color:"#2563EB" },
-  { jobs:"20 jobs/wk", gross:"LKR 60,000", net:"~LKR 45,600", pct:100, color:"#7C3AED" },
+  { jobs:"10 jobs/wk", gross:"LKR 30,000", net:"~LKR 22,800", pct:66, color:"#16A34A" },
+  { jobs:"20 jobs/wk", gross:"LKR 60,000", net:"~LKR 45,600", pct:100, color:"#16A34A" },
 ];
 
 export default function ForCleaners() {
   return (
     <section id="for-cleaners" aria-labelledby="cleaners-heading" className="py-20 lg:py-28 bg-[#F2F4ED] relative overflow-hidden">
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-white/65 blur-[80px]" />
-        <div className="absolute bottom-0 left-0 w-[350px] h-[350px] rounded-full bg-[#E4E8D9]/70 blur-[60px]" />
-      </div>
-
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
 

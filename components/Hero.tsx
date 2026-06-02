@@ -25,15 +25,15 @@ export default function Hero() {
           {/* Left */}
           <div className="flex flex-col gap-8">
             {/* Pill */}
-            <div className="glass-pill inline-flex items-center gap-2.5 rounded-full px-4 py-2 w-fit">
-              <span className="w-2 h-2 rounded-full bg-[#22C55E] shadow-[0_0_8px_#22C55E]" aria-hidden="true" />
+            <div className="clay-pill-dark inline-flex items-center gap-2.5 rounded-full px-4 py-2 w-fit">
+              <span className="w-2 h-2 rounded-full bg-[#22C55E]" aria-hidden="true" />
               <span className="text-xs font-semibold text-white/75 uppercase tracking-widest">Now live in Colombo</span>
             </div>
 
             <div className="flex flex-col gap-5">
               <h1 id="hero-heading" className="text-4xl sm:text-5xl lg:text-[3.6rem] font-bold text-white leading-[1.08] tracking-tight">
                 Sri Lanka&apos;s trusted{" "}
-                <span className="gradient-text-green">cleaning marketplace</span>{" "}
+                <span className="text-[#22C55E]">cleaning marketplace</span>{" "}
                 for Airbnb hosts.
               </h1>
               <p className="text-lg sm:text-xl text-white/55 leading-relaxed max-w-lg">
@@ -55,10 +55,10 @@ export default function Hero() {
             <div className="flex flex-wrap gap-2.5" role="list" aria-label="Trust signals">
               {[
                 { icon: BadgeCheck, label: "NIC Verified",    color: "#22C55E" },
-                { icon: ShieldCheck, label: "Police Cleared", color: "#60A5FA" },
+                { icon: ShieldCheck, label: "Police Cleared", color: "#22C55E" },
                 { icon: Star,        label: "5-Star Rated",   color: "#FBBF24" },
               ].map(({ icon: Icon, label, color }) => (
-                <div key={label} role="listitem" className="glass-pill flex items-center gap-2 rounded-full px-4 py-2.5 min-h-[44px]">
+                <div key={label} role="listitem" className="clay-pill-dark flex items-center gap-2 rounded-full px-4 py-2.5 min-h-[44px]">
                   <Icon size={15} style={{ color }} strokeWidth={2.5} aria-hidden="true" />
                   <span className="text-sm font-medium text-white/80">{label}</span>
                 </div>
@@ -86,7 +86,7 @@ export default function Hero() {
 
               {/* Floating card — top left */}
               <div className="absolute -top-5 -left-8 clay-card p-3 flex items-center gap-3 z-20 max-w-[180px]">
-                <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#22C55E] to-[#15803D] flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 rounded-2xl bg-[#16A34A] flex items-center justify-center flex-shrink-0">
                   <ShieldCheck size={18} color="white" aria-hidden="true" />
                 </div>
                 <div>
@@ -95,18 +95,6 @@ export default function Hero() {
                 </div>
               </div>
 
-              {/* Floating card — bottom right */}
-              <div className="absolute -bottom-4 -right-6 clay-card p-3 flex items-center gap-3 z-20 max-w-[190px]">
-                <div className="w-10 h-10 rounded-2xl bg-[#EFF6FF] border border-[#DBEAFE] flex items-center justify-center flex-shrink-0">
-                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-                    <path d="M4 9L8 13L14 6" stroke="#2563EB" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-                <div>
-                  <p className="text-xs font-bold text-[#0F172A] leading-tight">Job Complete</p>
-                  <p className="text-xs text-[#64748B]">Photos uploaded</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
