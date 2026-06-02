@@ -182,56 +182,118 @@ body {
 }
 .gradient-text { background: linear-gradient(135deg,#22C55E,#16A34A,#BBF7D0); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
 
-/* ── Btn primary — clay style ───────────────────────────────── */
+/* ── Btn primary — deep clay style ──────────────────────────── */
 .btn-primary {
-  background: linear-gradient(160deg, #22C55E 0%, #15803D 100%);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  color: #06291A;
+  background: linear-gradient(160deg, #4BEC8E 0%, #2ED173 45%, #17A94D 100%);
   box-shadow:
-    inset 0 2px 0 rgba(255,255,255,0.28),
-    inset 0 -4px 0 rgba(5,46,22,0.30),
-    0 10px 28px rgba(22,163,74,0.40),
-    0 4px 12px rgba(22,163,74,0.20);
-  transition: all 0.18s ease;
+    inset 0 2px 1px rgba(255,255,255,0.55),
+    inset 0 -6px 2px rgba(5,46,22,0.30),
+    0 12px 30px rgba(22,163,74,0.42),
+    0 4px 12px rgba(22,163,74,0.22);
+  transition: transform 0.26s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.22s ease;
+  will-change: transform;
+}
+/* keep label + icon above the shine sweep */
+.btn-primary > * { position: relative; z-index: 2; }
+/* clay top gloss */
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  inset: 1px 1px auto 1px;
+  height: 42%;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255,255,255,0.30), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+/* sliding shine */
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,0.55), transparent);
+  transform: translateX(-160%) skewX(-18deg);
+  pointer-events: none;
+  z-index: 1;
 }
 .btn-primary:hover {
+  transform: translateY(-3px) scale(1.02);
   box-shadow:
-    inset 0 2px 0 rgba(255,255,255,0.28),
-    inset 0 -4px 0 rgba(5,46,22,0.30),
-    0 18px 40px rgba(22,163,74,0.52),
-    0 6px 20px rgba(22,163,74,0.28);
-  transform: translateY(-2px);
+    inset 0 2px 1px rgba(255,255,255,0.52),
+    inset 0 -6px 2px rgba(5,46,22,0.34),
+    0 20px 46px rgba(22,163,74,0.56),
+    0 8px 22px rgba(22,163,74,0.30);
 }
+.btn-primary:hover::before { animation: btn-shine 0.75s ease forwards; }
 .btn-primary:active {
+  transform: translateY(1px) scale(0.97);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.2),
-    inset 0 -2px 0 rgba(5,46,22,0.2),
+    inset 0 3px 5px rgba(5,46,22,0.34),
+    inset 0 1px 0 rgba(255,255,255,0.22),
     0 4px 12px rgba(22,163,74,0.25);
-  transform: translateY(1px);
+  transition-duration: 0.09s;
 }
 
-/* ── Btn navy — claymorphism navy CTA ───────────────────────── */
+/* ── Btn navy — deep claymorphism navy CTA ──────────────────── */
 .btn-navy {
-  background: linear-gradient(160deg, #3D4258 0%, #313647 100%);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: linear-gradient(160deg, #474D66 0%, #3D4258 45%, #2C3040 100%);
   box-shadow:
-    inset 0 2px 0 rgba(255,255,255,0.12),
-    inset 0 -4px 0 rgba(0,0,0,0.28),
-    0 10px 28px rgba(49,54,71,0.40),
-    0 4px 12px rgba(49,54,71,0.20);
-  transition: all 0.18s ease;
+    inset 0 2px 1px rgba(255,255,255,0.18),
+    inset 0 -6px 2px rgba(0,0,0,0.34),
+    0 12px 30px rgba(49,54,71,0.42),
+    0 4px 12px rgba(49,54,71,0.22);
+  transition: transform 0.26s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.22s ease;
+  will-change: transform;
+}
+.btn-navy > * { position: relative; z-index: 2; }
+.btn-navy::after {
+  content: "";
+  position: absolute;
+  inset: 1px 1px auto 1px;
+  height: 42%;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255,255,255,0.16), transparent);
+  pointer-events: none;
+  z-index: 1;
+}
+.btn-navy::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,0.30), transparent);
+  transform: translateX(-160%) skewX(-18deg);
+  pointer-events: none;
+  z-index: 1;
 }
 .btn-navy:hover {
+  transform: translateY(-3px) scale(1.02);
   box-shadow:
-    inset 0 2px 0 rgba(255,255,255,0.14),
-    inset 0 -4px 0 rgba(0,0,0,0.30),
-    0 18px 40px rgba(49,54,71,0.50),
-    0 6px 20px rgba(49,54,71,0.28);
-  transform: translateY(-2px);
+    inset 0 2px 1px rgba(255,255,255,0.22),
+    inset 0 -6px 2px rgba(0,0,0,0.34),
+    0 20px 46px rgba(49,54,71,0.52),
+    0 8px 22px rgba(49,54,71,0.30);
 }
+.btn-navy:hover::before { animation: btn-shine 0.75s ease forwards; }
 .btn-navy:active {
+  transform: translateY(1px) scale(0.97);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.10),
-    inset 0 -2px 0 rgba(0,0,0,0.20),
+    inset 0 3px 5px rgba(0,0,0,0.36),
+    inset 0 1px 0 rgba(255,255,255,0.14),
     0 4px 12px rgba(49,54,71,0.25);
-  transform: translateY(1px);
+  transition-duration: 0.09s;
 }
 
 /* ── Claymorphism base — white card ─────────────────────────── */
@@ -375,6 +437,107 @@ body {
 }
 .clay-card-rose:hover { transform: translateY(-5px); box-shadow: inset 0 2px 0 rgba(255,255,255,.98), inset 0 -4px 0 rgba(225,29,72,.14), 0 28px 68px rgba(225,29,72,.14), 0 8px 24px rgba(225,29,72,.09); }
 
+/* ── Clay pill navy — raised icon tile for dark sections ────── */
+.clay-pill-navy {
+  background: linear-gradient(160deg, #474D66, #383D54);
+  border: 1.5px solid rgba(255,255,255,0.16);
+  box-shadow:
+    inset 0 2px 0 rgba(255,255,255,.12),
+    inset 0 -3px 0 rgba(0,0,0,.30),
+    0 6px 16px rgba(0,0,0,.22);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+/* ── Navbar — clay + neumorphic floating bar ────────────────── */
+.clay-nav {
+  background: linear-gradient(160deg, rgba(255,255,255,0.86), rgba(255,255,255,0.66));
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid rgba(255,255,255,0.75);
+  box-shadow:
+    inset 0 2px 1px rgba(255,255,255,0.95),   /* clay top highlight */
+    inset 0 -5px 8px rgba(49,54,71,0.05),      /* clay inner bottom */
+    0 10px 28px rgba(49,54,71,0.12),           /* soft depth */
+    0 2px 10px rgba(49,54,71,0.05);
+  transition: box-shadow 0.25s ease;
+}
+.clay-nav-scrolled {
+  background: linear-gradient(160deg, rgba(255,255,255,0.92), rgba(255,255,255,0.78));
+  box-shadow:
+    inset 0 2px 1px rgba(255,255,255,0.98),
+    inset 0 -5px 8px rgba(49,54,71,0.06),
+    0 14px 38px rgba(49,54,71,0.18),
+    0 4px 14px rgba(49,54,71,0.10);
+}
+
+/* clay logo mark */
+.clay-logo {
+  box-shadow:
+    inset 0 1.5px 0 rgba(255,255,255,0.55),
+    inset 0 -2px 2px rgba(5,46,22,0.30),
+    0 4px 10px rgba(22,163,74,0.40),
+    0 1px 3px rgba(22,163,74,0.30);
+}
+
+/* neumorphic soft-inset nav link / ghost cta */
+.nav-link {
+  transition: color 0.15s ease, background 0.18s ease, box-shadow 0.18s ease, transform 0.12s ease;
+}
+.nav-link:hover {
+  background: rgba(255,255,255,0.5);
+  box-shadow:
+    inset 1px 1px 3px rgba(49,54,71,0.12),
+    inset -1px -1px 3px rgba(255,255,255,0.95);
+}
+.nav-link:active { transform: scale(0.96); }
+
+/* active nav tab — clearly highlighted */
+.nav-link-active,
+.nav-link-active:hover {
+  color: #15803D;
+  background: linear-gradient(160deg, #DCFCE7, #BBF7D0);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.9),
+    inset 0 -2px 3px rgba(22,163,74,0.16),
+    0 1px 3px rgba(22,163,74,0.14);
+}
+
+/* neumorphic icon button (hamburger) */
+.nav-icon-btn {
+  transition: background 0.18s ease, box-shadow 0.18s ease, transform 0.12s ease;
+}
+.nav-icon-btn:hover {
+  background: rgba(255,255,255,0.55);
+  box-shadow:
+    inset 1px 1px 3px rgba(49,54,71,0.14),
+    inset -1px -1px 3px rgba(255,255,255,0.95);
+}
+.nav-icon-btn:active { transform: scale(0.93); }
+
+/* compact clay navy CTA for navbar */
+.nav-cta-host {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: linear-gradient(160deg, #474D66 0%, #383D54 50%, #2C3040 100%);
+  box-shadow:
+    inset 0 1.5px 0 rgba(255,255,255,0.20),
+    inset 0 -3px 2px rgba(0,0,0,0.30),
+    0 6px 16px rgba(49,54,71,0.34),
+    0 2px 6px rgba(49,54,71,0.22);
+  transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s ease;
+}
+.nav-cta-host > * { position: relative; z-index: 2; }
+.nav-cta-host:hover {
+  transform: translateY(-1.5px) scale(1.03);
+  box-shadow:
+    inset 0 1.5px 0 rgba(255,255,255,0.24),
+    inset 0 -3px 2px rgba(0,0,0,0.30),
+    0 10px 24px rgba(49,54,71,0.42),
+    0 4px 12px rgba(49,54,71,0.26);
+}
+.nav-cta-host:active { transform: translateY(0.5px) scale(0.96); transition-duration: 0.09s; }
+
 /* ── Clay icon tile — squishy rounded icon container ────────── */
 .clay-icon {
   border-radius: 18px;
@@ -469,6 +632,12 @@ select.clay-input {
 }
 .animate-scrim-in { animation: airu-scrim-in 0.2s ease both; }
 .animate-panel-in { animation: airu-panel-in 0.28s cubic-bezier(0.34,1.4,0.5,1) both; }
+
+/* button shine sweep */
+@keyframes btn-shine {
+  from { transform: translateX(-160%) skewX(-18deg); }
+  to   { transform: translateX(320%) skewX(-18deg); }
+}
 
 /* ── Reduced Motion ─────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {

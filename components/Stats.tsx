@@ -18,10 +18,10 @@ export default function Stats() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <dl className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
           {stats.map(({ value, label, sub, color, icon: Icon }) => (
-            <div key={label} className="glass-card p-5 lg:p-6 text-center flex flex-col items-center">
+            <div key={label} className="clay-card-navy p-5 lg:p-6 text-center flex flex-col items-center">
               <dt className="sr-only">{label}</dt>
               <dd className="flex flex-col items-center">
-                <span className="glass-pill w-11 h-11 rounded-2xl flex items-center justify-center mb-3" aria-hidden="true">
+                <span className="clay-pill-navy w-11 h-11 rounded-2xl flex items-center justify-center mb-3" aria-hidden="true">
                   <Icon size={20} style={{ color }} strokeWidth={2} />
                 </span>
                 <p className="text-4xl lg:text-5xl font-bold mb-1 tabular-nums" style={{ color }}>{value}</p>
