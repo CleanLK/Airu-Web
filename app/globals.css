@@ -549,6 +549,86 @@ select.clay-input {
   to   { transform: translateX(320%) skewX(-18deg); }
 }
 
+/* ── Hero ambient background — drifting blobs + clean-shine sweep ─ */
+/* Slow, low-opacity environmental motion so the section feels alive,
+   never busy. Transform/opacity only; killed by reduced-motion below. */
+@keyframes airu-blob-a {
+  0%, 100% { transform: translate3d(0,0,0) scale(1); }
+  33%      { transform: translate3d(46px,34px,0) scale(1.09); }
+  66%      { transform: translate3d(-32px,22px,0) scale(0.95); }
+}
+@keyframes airu-blob-b {
+  0%, 100% { transform: translate3d(0,0,0) scale(1); }
+  50%      { transform: translate3d(-54px,-34px,0) scale(1.13); }
+}
+@keyframes airu-blob-c {
+  0%, 100% { transform: translate3d(0,0,0) scale(1); }
+  50%      { transform: translate3d(34px,-44px,0) scale(1.07); }
+}
+@keyframes airu-blob-d {
+  0%, 100% { transform: translate3d(0,0,0) scale(0.96); opacity: 0.5; }
+  50%      { transform: translate3d(28px,26px,0) scale(1.1);  opacity: 0.85; }
+}
+.hero-blob-a { animation: airu-blob-a 23s ease-in-out infinite;       will-change: transform; }
+.hero-blob-b { animation: airu-blob-b 27s ease-in-out -6s infinite;   will-change: transform; }
+.hero-blob-c { animation: airu-blob-c 19s ease-in-out -3s infinite;   will-change: transform; }
+.hero-blob-d { animation: airu-blob-d 21s ease-in-out -10s infinite;  will-change: transform, opacity; }
+
+/* clean-shine sweep — a soft light band crosses the hero like a
+   squeegee catching the light on a just-cleaned surface */
+@keyframes airu-hero-sheen {
+  0%   { transform: translateX(-130%) skewX(-12deg); opacity: 0; }
+  6%   { opacity: 1; }
+  26%  { opacity: 0; }
+  100% { transform: translateX(240%) skewX(-12deg);  opacity: 0; }
+}
+.hero-sheen {
+  animation: airu-hero-sheen 13s ease-in-out 2.5s infinite;
+  will-change: transform, opacity;
+}
+
+/* slow parallax drift on the grid for subtle depth */
+@keyframes airu-grid-drift {
+  0%, 100% { transform: translate3d(0,0,0); }
+  50%      { transform: translate3d(-28px,-20px,0); }
+}
+.hero-grid { animation: airu-grid-drift 30s ease-in-out infinite; will-change: transform; }
+
+/* ── Hero verification feed — staggered proof cards ─────────── */
+/* Entrance: each card slides up + scales in, sequenced like a live feed.
+   Settle: a barely-there float so the stack feels alive, not decorative. */
+@keyframes airu-proof-in {
+  from { opacity: 0; transform: translateY(16px) scale(0.9); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes airu-proof-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+.proof-card {
+  opacity: 0;
+  /* --in-delay sequences the feed; float starts right as the entrance ends */
+  animation:
+    airu-proof-in 0.62s cubic-bezier(0.34,1.4,0.5,1) var(--in-delay, 0s) both,
+    airu-proof-float var(--float-dur, 6s) ease-in-out var(--float-delay, 1s) infinite;
+  will-change: transform, opacity;
+}
+
+/* live "real-time" pulse dot on the feed */
+@keyframes airu-live-pulse {
+  0%, 100% { opacity: 1;   transform: scale(1);   box-shadow: 0 0 0 0 rgba(34,197,94,0.45); }
+  50%      { opacity: 0.5; transform: scale(0.85); box-shadow: 0 0 0 5px rgba(34,197,94,0); }
+}
+.live-dot { animation: airu-live-pulse 1.8s ease-in-out infinite; }
+
+/* soft check "stamp" inside each proof card icon tile */
+@keyframes airu-stamp-in {
+  0%   { transform: scale(0.4); opacity: 0; }
+  60%  { transform: scale(1.12); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.proof-stamp { animation: airu-stamp-in 0.5s cubic-bezier(0.34,1.56,0.64,1) var(--stamp-delay, 0s) both; }
+
 /* ── Reduced Motion ─────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
